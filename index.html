@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Elora — Fun page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="page-transition-overlay" id="page-transition"></div>
+	<canvas id="bg-particles"></canvas>
+	<main class="main-container">
+		<div class="title-anim">
+			<div class="typewriter-title center-appear" id="typewriter"></div>
+		</div>
+		<div class="about-logo-block">
+			<a href="index2.html" class="about-link animated-btn center-appear" id="about-link">Facts about Elora</a>
+			<div class="logo-anim center-appear" id="logo-container"></div>
+		</div>
+	</main>
+	<script src="script.js"></script>
+</body>
+<script>
+// Анимация перехода сдвигом
+const aboutLink = document.getElementById('about-link');
+const overlay = document.getElementById('page-transition');
+if (aboutLink && overlay) {
+	aboutLink.addEventListener('click', function(e) {
+		e.preventDefault();
+		overlay.classList.add('active');
+		document.body.classList.add('overlay-blur');
+		setTimeout(() => {
+			window.location.href = aboutLink.href;
+		}, 650);
+	});
+	// Сброс overlay после загрузки
+	window.addEventListener('pageshow', () => {
+		if (overlay.classList.contains('active')) {
+			overlay.style.opacity = '1';
+			setTimeout(() => {
+				overlay.style.opacity = '0';
+				setTimeout(() => {
+					overlay.classList.remove('active');
+					overlay.style.opacity = '';
+					document.body.classList.remove('overlay-blur');
+				}, 500);
+			}, 100);
+		} else {
+			overlay.classList.remove('active');
+			overlay.style.opacity = '';
+			document.body.classList.remove('overlay-blur');
+		}
+	});
+}
+</script>
+</body>
+</html>
