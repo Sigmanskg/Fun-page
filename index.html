@@ -22,35 +22,21 @@
 	<script src="script.js"></script>
 </body>
 <script>
-// Анимация перехода сдвигом
+// Fade transition between pages (простое появление/исчезновение)
 const aboutLink = document.getElementById('about-link');
 const overlay = document.getElementById('page-transition');
 if (aboutLink && overlay) {
 	aboutLink.addEventListener('click', function(e) {
 		e.preventDefault();
 		overlay.classList.add('active');
-		document.body.classList.add('overlay-blur');
 		setTimeout(() => {
 			window.location.href = aboutLink.href;
-		}, 650);
+		}, 400);
 	});
 	// Сброс overlay после загрузки
 	window.addEventListener('pageshow', () => {
-		if (overlay.classList.contains('active')) {
-			overlay.style.opacity = '1';
-			setTimeout(() => {
-				overlay.style.opacity = '0';
-				setTimeout(() => {
-					overlay.classList.remove('active');
-					overlay.style.opacity = '';
-					document.body.classList.remove('overlay-blur');
-				}, 500);
-			}, 100);
-		} else {
-			overlay.classList.remove('active');
-			overlay.style.opacity = '';
-			document.body.classList.remove('overlay-blur');
-		}
+		overlay.classList.remove('active');
+		overlay.style.opacity = '';
 	});
 }
 </script>

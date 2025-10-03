@@ -117,7 +117,7 @@
     }
     </style>
     <script>
-    // Кнопка Home с ripple-эффектом и анимацией
+    // Кнопка Home с ripple-эффектом и fade-переходом
     const backBtn = document.getElementById('back-link');
     if (backBtn) {
         setTimeout(() => backBtn.classList.add('visible'), 800);
@@ -130,15 +130,14 @@
             circle.style.top = (e.clientY - rect.top) + 'px';
             backBtn.appendChild(circle);
             setTimeout(() => circle.remove(), 600);
-            // Переход на главную с анимацией overlay
+            // Переход на главную с fade overlay
             e.preventDefault();
             const overlay = document.getElementById('page-transition');
             if (overlay) {
                 overlay.classList.add('active');
-                document.body.classList.add('overlay-blur');
                 setTimeout(() => {
                     window.location.href = backBtn.href;
-                }, 650);
+                }, 400);
             } else {
                 window.location.href = backBtn.href;
             }
@@ -161,36 +160,13 @@
         showFact(currentFact);
     };
 
-    // Анимация перехода сдвигом
-    const backLink = document.getElementById('back-link');
+    // Fade transition сброс overlay после загрузки
     const overlay = document.getElementById('page-transition');
-    if (backLink && overlay) {
-        backLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            overlay.classList.add('active');
-            document.body.classList.add('overlay-blur');
-            setTimeout(() => {
-                window.location.href = backLink.href;
-            }, 650);
-        });
-        // Сброс overlay после загрузки
-        window.addEventListener('pageshow', () => {
-            if (overlay.classList.contains('active')) {
-                overlay.style.opacity = '1';
-                setTimeout(() => {
-                    overlay.style.opacity = '0';
-                    setTimeout(() => {
-                        overlay.classList.remove('active');
-                        overlay.style.opacity = '';
-                        document.body.classList.remove('overlay-blur');
-                    }, 500);
-                }, 100);
-            } else {
-                overlay.classList.remove('active');
-                overlay.style.opacity = '';
-                document.body.classList.remove('overlay-blur');
-            }
-        });
-    }
+    window.addEventListener('pageshow', () => {
+        if (overlay) {
+            overlay.classList.remove('active');
+            overlay.style.opacity = '';
+        }
+    });
     </script>
 </html>

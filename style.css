@@ -1,3 +1,66 @@
+/* --- Адаптивность для мобильных устройств --- */
+@media (max-width: 600px) {
+	.main-container {
+		min-width: 0;
+		width: 100vw;
+		padding: 0 0.5em;
+		min-height: 100vh;
+		height: auto;
+	}
+	.typewriter-title {
+		font-size: 1.15rem;
+		padding: 0 0.2em;
+		margin-bottom: 18px;
+		max-width: 98vw;
+		word-break: break-word;
+	}
+	.about-logo-block {
+		gap: 18px;
+		margin-top: 18px;
+	}
+	.about-link.animated-btn {
+		font-size: 0.98rem;
+		padding: 12px 10vw;
+		margin: 18px auto 0 auto;
+		min-width: 120px;
+		max-width: 90vw;
+	}
+	.logo-anim {
+		margin-top: 4px;
+	}
+	.tiktok-logo {
+		width: 38px;
+		height: 38px;
+	}
+	.facts-slider-container {
+		gap: 8px;
+		margin: 18px 0 0 0;
+	}
+	.facts-slider {
+		min-width: 0;
+		max-width: 96vw;
+		min-height: 48px;
+		padding: 0 2vw;
+	}
+	.fact-slide {
+		font-size: 0.98rem;
+		padding: 12px 8px;
+	}
+	.slider-arrow {
+		width: 36px;
+		height: 36px;
+		font-size: 1.2rem;
+	}
+	.about-title {
+		font-size: 1.3rem;
+		text-align: center;
+		padding: 0 0.2em;
+	}
+	.about-container {
+		gap: 18px;
+		padding: 0 0.5em;
+	}
+}
 /* Блок для вертикального выравнивания кнопки и логотипа */
 .about-logo-block {
 	display: flex;
@@ -26,36 +89,22 @@
 	50% { background-position: 100% 50%; }
 	100% { background-position: 0% 50%; }
 }
+/* Fade transition overlay (простое затемнение) */
 .page-transition-overlay {
 	position: fixed;
-	left: 50%;
-	top: 50%;
-	width: 200vw;
-	height: 200vw;
-	background: radial-gradient(circle at 50% 50%, #25f4ee 0%, #fe2c55 40%, #263142 100%);
-	background-size: 200% 200%;
-	border-radius: 50%;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: #181c24ee;
 	z-index: 9999;
 	pointer-events: none;
-	transform: translate(-50%, -50%) scale(0);
 	opacity: 0;
-	box-shadow: 0 0 64px 32px #25f4ee88, 0 0 128px 64px #fe2c5588;
-	filter: none;
-	transition: transform 0.7s cubic-bezier(.7,0,.3,1), opacity 0.5s cubic-bezier(.7,0,.3,1), filter 0.5s;
-	animation: gradient-move 2.5s linear infinite;
+	transition: opacity 0.45s cubic-bezier(.7,0,.3,1);
 }
 .page-transition-overlay.active {
-	transform: translate(-50%, -50%) scale(1.05);
 	opacity: 1;
 	pointer-events: all;
-	animation: gradient-move 1.2s linear infinite, overlay-pulse 0.7s cubic-bezier(.7,0,.3,1);
-	box-shadow: 0 0 96px 48px #25f4eecc, 0 0 192px 96px #fe2c55cc;
-	filter: blur(2px) brightness(1.1);
-}
-@keyframes overlay-pulse {
-	0% { transform: translate(-50%, -50%) scale(0.95); }
-	50% { transform: translate(-50%, -50%) scale(1.08); }
-	100% { transform: translate(-50%, -50%) scale(1.05); }
 }
 
 body.overlay-blur > *:not(.page-transition-overlay):not(script) {
