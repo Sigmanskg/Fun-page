@@ -1,64 +1,153 @@
 /* --- Адаптивность для мобильных устройств --- */
 @media (max-width: 600px) {
-	.main-container {
-		min-width: 0;
+	html, body {
 		width: 100vw;
-		padding: 0 0.5em;
-		min-height: 100vh;
-		height: auto;
+		min-width: 0;
+		max-width: 100vw;
+		overflow-x: hidden !important;
+		font-size: 15px;
+	body {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
 	}
-	.typewriter-title {
-		font-size: 1.15rem;
-		padding: 0 0.2em;
-		margin-bottom: 18px;
-		max-width: 98vw;
+	* {
+		box-sizing: border-box !important;
+		max-width: 100vw !important;
+	}
+	.main-container, .about-container {
+		width: 100vw;
+		min-width: 0;
+		max-width: 100vw;
+		padding: 0 2vw;
+		margin: 0 auto;
+	}
+	.typewriter-title, .about-title, .fact-slide {
 		word-break: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
+		max-width: 98vw;
 	}
-	.about-logo-block {
-		gap: 18px;
-		margin-top: 18px;
+	.about-link.animated-btn, .slider-arrow {
+		max-width: 96vw;
+		min-width: 0;
+		box-sizing: border-box;
 	}
-	.about-link.animated-btn {
-		font-size: 0.98rem;
-		padding: 12px 10vw;
-		margin: 18px auto 0 auto;
-		min-width: 120px;
-		max-width: 90vw;
+	.facts-slider {
+		max-width: 98vw;
+		min-width: 0;
+		padding: 0 1vw;
+	}
+	.fact-slide {
+		font-size: 0.85rem;
+		padding: 6px 2px;
+		min-width: 0;
+		max-width: 96vw;
+	}
+	.slider-arrow {
+		width: 24px;
+		height: 24px;
+		font-size: 0.95rem;
+		padding: 0;
 	}
 	.logo-anim {
-		margin-top: 4px;
+		margin-top: 0;
 	}
 	.tiktok-logo {
-		width: 38px;
-		height: 38px;
+		width: 22px;
+		height: 22px;
+	}
+	.about-logo-block {
+		gap: 6px;
+		margin-top: 6px;
+	}
+	.about-link.animated-btn {
+		font-size: 0.82rem;
+		padding: 7px 2vw;
+		margin: 6px auto 0 auto;
+		min-width: 60px;
 	}
 	.facts-slider-container {
-		gap: 8px;
-		margin: 18px 0 0 0;
+		gap: 2px;
+		margin: 6px 0 0 0;
+	}
+	.about-container {
+		gap: 6px;
+		padding: 0 2vw;
+	}
+}
+	.main-container {
+		min-width: unset;
+		width: 100vw;
+		padding: 0 0.1em;
+		min-height: 0;
+		height: auto;
+		box-sizing: border-box;
+	}
+	.typewriter-title {
+		font-size: 0.98rem;
+		padding: 0 0.05em;
+		margin-bottom: 10px;
+		max-width: 99vw;
+		word-break: break-word;
+		line-height: 1.18;
+		white-space: normal;
+		overflow-wrap: break-word;
+	}
+	.about-logo-block {
+		gap: 10px;
+		margin-top: 10px;
+	}
+	.about-link.animated-btn {
+		font-size: 0.89rem;
+		padding: 9px 4vw;
+		margin: 10px auto 0 auto;
+		min-width: 90px;
+		max-width: 96vw;
+	}
+	.logo-anim {
+		margin-top: 2px;
+	}
+	.tiktok-logo {
+		width: 28px;
+		height: 28px;
+	}
+	.facts-slider-container {
+		gap: 4px;
+		margin: 10px 0 0 0;
 	}
 	.facts-slider {
 		min-width: 0;
-		max-width: 96vw;
-		min-height: 48px;
-		padding: 0 2vw;
+		max-width: 99vw;
+		min-height: 32px;
+		padding: 0 1vw;
 	}
 	.fact-slide {
-		font-size: 0.98rem;
-		padding: 12px 8px;
+		font-size: 0.89rem;
+		padding: 7px 4px;
+		line-height: 1.18;
+		word-break: break-word;
+		white-space: normal;
+		overflow-wrap: break-word;
 	}
 	.slider-arrow {
-		width: 36px;
-		height: 36px;
-		font-size: 1.2rem;
+		width: 28px;
+		height: 28px;
+		font-size: 1rem;
 	}
 	.about-title {
-		font-size: 1.3rem;
+		font-size: 1.05rem;
 		text-align: center;
-		padding: 0 0.2em;
+		padding: 0 0.1em;
+		line-height: 1.15;
+		word-break: break-word;
+		white-space: normal;
+		overflow-wrap: break-word;
 	}
 	.about-container {
-		gap: 18px;
-		padding: 0 0.5em;
+		gap: 10px;
+		padding: 0 0.1em;
+		box-sizing: border-box;
 	}
 }
 /* Блок для вертикального выравнивания кнопки и логотипа */
