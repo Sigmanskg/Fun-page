@@ -101,19 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
             typewriter.classList.add('typing'); // добавить курсор
             function typeOnce() {
                 if (i <= title.length) {
-                    let html = '';
-                    if (i > 0) {
-                        html = title.slice(0, i - 1)
-                            .split('').map(ch => `<span>${ch}</span>`).join('');
-                        html += `<span class="typed-char">${title[i - 1]}</span>`;
-                    }
-                    typewriter.innerHTML = html;
+                    // Просто печатаем текст без span и подсветки
+                    typewriter.textContent = title.slice(0, i);
                     i++;
                     setTimeout(typeOnce, 120);
                 } else {
-                    typewriter.innerHTML = title.split('').map(ch => `<span>${ch}</span>`).join('');
+                    typewriter.textContent = title;
                     typewriter.classList.remove('typing');
-                    typewriter.classList.add('glow');
+                    typewriter.classList.remove('glow'); // Убрать glow, чтобы не было подсветки
                     // Показать кнопку и логотип вместе
                     showLogo();
                     showAboutAndLogo();
