@@ -1,493 +1,200 @@
-/* --- Адаптивность для мобильных устройств --- */
-@media (max-width: 600px) {
-	html, body {
-		width: 100vw;
-		min-width: 0;
-		max-width: 100vw;
-		overflow-x: hidden !important;
-		font-size: 15px;
-	body {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	* {
-		box-sizing: border-box !important;
-		max-width: 100vw !important;
-	}
-	.main-container, .about-container {
-		width: 100vw;
-		min-width: 0;
-		max-width: 100vw;
-		padding: 0 2vw;
-		margin: 0 auto;
-	}
-	.typewriter-title, .about-title, .fact-slide {
-		word-break: break-word;
-		overflow-wrap: break-word;
-		white-space: normal;
-		max-width: 98vw;
-	}
-	.about-link.animated-btn, .slider-arrow {
-		max-width: 96vw;
-		min-width: 0;
-		box-sizing: border-box;
-	}
-	.facts-slider {
-		max-width: 98vw;
-		min-width: 0;
-		padding: 0 1vw;
-	}
-	.fact-slide {
-		font-size: 0.85rem;
-		padding: 6px 2px;
-		min-width: 0;
-		max-width: 96vw;
-	}
-	.slider-arrow {
-		width: 24px;
-		height: 24px;
-		font-size: 0.95rem;
-		padding: 0;
-	}
-	.logo-anim {
-		margin-top: 0;
-	}
-	.tiktok-logo {
-		width: 22px;
-		height: 22px;
-	}
-	.about-logo-block {
-		gap: 6px;
-		margin-top: 6px;
-	}
-	.about-link.animated-btn {
-		font-size: 0.82rem;
-		padding: 7px 2vw;
-		margin: 6px auto 0 auto;
-		min-width: 60px;
-	}
-	.facts-slider-container {
-		gap: 2px;
-		margin: 6px 0 0 0;
-	}
-	.about-container {
-		gap: 6px;
-		padding: 0 2vw;
-	}
-}
-	.main-container {
-		min-width: unset;
-		width: 100vw;
-		padding: 0 0.1em;
-		min-height: 0;
-		height: auto;
-		box-sizing: border-box;
-	}
-	.typewriter-title {
-		font-size: 0.98rem;
-		padding: 0 0.05em;
-		margin-bottom: 10px;
-		max-width: 99vw;
-		word-break: break-word;
-		line-height: 1.18;
-		white-space: normal;
-		overflow-wrap: break-word;
-	}
-	.about-logo-block {
-		gap: 10px;
-		margin-top: 10px;
-	}
-	.about-link.animated-btn {
-		font-size: 0.89rem;
-		padding: 9px 4vw;
-		margin: 10px auto 0 auto;
-		min-width: 90px;
-		max-width: 96vw;
-	}
-	.logo-anim {
-		margin-top: 2px;
-	}
-	.tiktok-logo {
-		width: 28px;
-		height: 28px;
-	}
-	.facts-slider-container {
-		gap: 4px;
-		margin: 10px 0 0 0;
-	}
-	.facts-slider {
-		min-width: 0;
-		max-width: 99vw;
-		min-height: 32px;
-		padding: 0 1vw;
-	}
-	.fact-slide {
-		font-size: 0.89rem;
-		padding: 7px 4px;
-		line-height: 1.18;
-		word-break: break-word;
-		white-space: normal;
-		overflow-wrap: break-word;
-	}
-	.slider-arrow {
-		width: 28px;
-		height: 28px;
-		font-size: 1rem;
-	}
-	.about-title {
-		font-size: 1.05rem;
-		text-align: center;
-		padding: 0 0.1em;
-		line-height: 1.15;
-		word-break: break-word;
-		white-space: normal;
-		overflow-wrap: break-word;
-	}
-	.about-container {
-		gap: 10px;
-		padding: 0 0.1em;
-		box-sizing: border-box;
-	}
-}
-/* Блок для вертикального выравнивания кнопки и логотипа */
-.about-logo-block {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 32px;
-	margin-top: 32px;
-}
-/* Анимация появления и смещения главных элементов */
-.center-appear {
-	opacity: 0;
-	transform: translateY(40px) scale(0.95);
-	transition: opacity 0.7s cubic-bezier(.7,0,.3,1), transform 0.7s cubic-bezier(.7,0,.3,1);
-}
-.center-appear.visible {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-.move-left {
-	transition: transform 0.8s cubic-bezier(.7,0,.3,1), opacity 0.5s;
-	transform: translateX(-180px) scale(1);
-}
-/* Анимация перехода между страницами (заполнение) */
-@keyframes gradient-move {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
-}
-/* Fade transition overlay (простое затемнение) */
-.page-transition-overlay {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background: #181c24ee;
-	z-index: 9999;
-	pointer-events: none;
-	opacity: 0;
-	transition: opacity 0.45s cubic-bezier(.7,0,.3,1);
-}
-.page-transition-overlay.active {
-	opacity: 1;
-	pointer-events: all;
-}
-
-body.overlay-blur > *:not(.page-transition-overlay):not(script) {
-	filter: blur(6px) brightness(0.93);
-	transition: filter 0.5s;
-}
-/* Снежинки на подстранице */
-#snow-canvas {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 0;
-	pointer-events: none;
-	display: block;
-}
-/* Ссылка 'Обо мне' в правом верхнем углу */
-/* Центрированная ссылка 'Обо мне' */
-/* Центрированная анимированная кнопка-ссылка 'Обо мне' */
-.about-link.animated-btn {
-	display: inline-block;
-	font-size: 1.18rem;
-	color: #25f4ee;
-	background: linear-gradient(90deg, #23272f 60%, #23a6d5 100%);
-	padding: 18px 44px;
-	border-radius: 30px;
-	text-decoration: none;
-	box-shadow: 0 4px 24px rgba(35,166,213,0.15);
-	font-weight: 600;
-	letter-spacing: 0.05em;
-	transition: transform 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	opacity: 0.93;
-	backdrop-filter: blur(2px);
-	margin: 32px auto 0 auto;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-}
-.about-link.animated-btn:hover {
-	background: linear-gradient(90deg, #23272f 0%, #e73c7e 100%);
-	color: #fff;
-	transform: scale(1.08) rotate(-2deg);
-	box-shadow: 0 8px 32px rgba(231,60,126,0.25);
-}
-.about-link.animated-btn:active {
-	background: #181c24;
-	color: #23a6d5;
-	transform: scale(0.98);
-}
-/* Ripple эффект для ссылки-кнопки */
-.about-link.animated-btn .ripple {
-	position: absolute;
-	width: 120px;
-	height: 120px;
-	background: rgba(35, 166, 213, 0.3);
-	border-radius: 50%;
-	pointer-events: none;
-	transform: scale(0);
-	animation: ripple-effect 0.6s linear;
-	z-index: 2;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%) scale(0);
-}
-/* Анимированные частицы на фоне */
-#bg-particles {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 0;
-	pointer-events: none;
-	display: block;
-}
-.main-container {
-	position: relative;
-	z-index: 1;
-}
-
-.title-move-container {
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	transition: transform 0.9s cubic-bezier(.4,2,.6,1), filter 0.7s;
-	will-change: transform, filter;
-}
-.title-move-container.move-up {
-	transform: translateY(-90px) scale(1.08);
-	filter: drop-shadow(0 8px 32px #23a6d5cc);
-}
-
-
-.button-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 18px;
-}
-
-body {
+/* Reset & base */
+html, body {
 	margin: 0;
-	min-height: 100vh;
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #263142;
-	overflow-x: hidden;
-}
-
-
-
-.main-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-width: 320px;
-	width: 100vw;
-	max-width: 100vw;
-	min-height: 100vh;
-	height: 100vh;
-	position: relative;
-}
-
-.title-anim {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	transition: transform 0.9s cubic-bezier(.4,2,.6,1), filter 0.7s;
-	will-change: transform, filter;
-}
-.title-anim.move-up {
-	transform: translateY(-90px) scale(1.08);
-	filter: drop-shadow(0 8px 32px #23a6d5cc);
-}
-
-/* Typewriter title с мигающим курсором */
-.typewriter-title {
-	font-size: 3.2rem;
+	padding: 0;
+	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+	background: linear-gradient(120deg, #263142 0%, #23272f 100%);
 	color: #fff;
-	margin-bottom: 40px;
-	font-family: 'Consolas', 'Courier New', monospace;
-	letter-spacing: 0.08em;
-	/* white-space: nowrap; убрано для переноса */
-	overflow: hidden;
-	min-height: 1.2em;
-	transition: text-shadow 0.4s;
-	text-align: center;
-	width: 100vw;
-	max-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
-	word-break: break-word;
-	position: relative;
+	min-height: 100vh;
 }
-.typewriter-title.typing::after {
-	content: '';
-	display: inline-block;
-	width: 2px;
-	height: 1.1em;
-	background: #fff;
-	margin-left: 4px;
-	vertical-align: -0.1em;
-	animation: blink-cursor 0.7s steps(1) infinite;
+img { max-width: 100%; display: block; }
+
+/* Intro animation */
+.intro {
+	position: fixed;
+	left: 0; top: 0; width: 100vw; height: 100vh;
+	background: #23272f;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	transition: opacity 0.9s cubic-bezier(.7,0,.3,1);
 }
-@keyframes blink-cursor {
-	0%, 100% { opacity: 1; }
-	50% { opacity: 0; }
-}
-.typewriter-title.glow {
-	text-shadow: 0 0 16px #fff, 0 0 32px #23a6d5, 0 0 48px #e73c7e;
-	animation: glow-flicker 1.2s infinite alternate;
-}
-/* Анимация появления последней буквы */
-.typewriter-title .typed-char {
-	display: inline-block;
-	animation: pop-in 0.22s cubic-bezier(.7,0,.3,1);
+.intro-title {
+	font-size: 3.5rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
 	color: #25f4ee;
-	text-shadow: 0 0 8px #25f4ee99, 0 0 16px #fff8;
+	text-shadow: 0 0 24px #25f4ee99, 0 0 48px #fe2c5544;
+	opacity: 1;
+	animation: pop-in 1.1s cubic-bezier(.7,0,.3,1);
+}
+.intro.hide {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.9s cubic-bezier(.7,0,.3,1);
 }
 @keyframes pop-in {
-	0% { transform: scale(1.7) translateY(-0.5em); opacity: 0; }
-	60% { transform: scale(1.1) translateY(0.1em); opacity: 1; }
+	0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+	60% { transform: scale(1.1) translateY(-10px); opacity: 1; }
 	100% { transform: scale(1) translateY(0); opacity: 1; }
 }
-@keyframes glow-flicker {
-	from { text-shadow: 0 0 8px #fff, 0 0 16px #23a6d5, 0 0 24px #e73c7e; }
-	to { text-shadow: 0 0 24px #fff, 0 0 48px #23a6d5, 0 0 64px #e73c7e; }
-}
 
-.animated-btn {
-	display: block;
-	margin: 0 auto 18px auto;
-	padding: 18px 44px;
-	font-size: 1.2rem;
-	border: none;
-	border-radius: 30px;
-	background: linear-gradient(90deg, #23272f 60%, #23a6d5 100%);
-	color: #fff;
-	cursor: pointer;
-	box-shadow: 0 4px 24px rgba(35,166,213,0.15);
-	transition: transform 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
-	outline: none;
-	font-weight: bold;
-	position: relative;
-	overflow: hidden;
-	letter-spacing: 0.05em;
-}
-.animated-btn:hover {
-	background: linear-gradient(90deg, #23272f 0%, #e73c7e 100%);
-	color: #fff;
-	transform: scale(1.08) rotate(-2deg);
-	box-shadow: 0 8px 32px rgba(231,60,126,0.25);
-}
-.animated-btn:active {
-	background: #181c24;
-	color: #23a6d5;
-	transform: scale(0.98);
-}
-.ripple {
-	position: absolute;
-	width: 120px;
-	height: 120px;
-	background: rgba(35, 166, 213, 0.3);
-	border-radius: 50%;
-	pointer-events: none;
-	transform: scale(0);
-	animation: ripple-effect 0.6s linear;
-	z-index: 2;
-}
-@keyframes ripple-effect {
-	to {
-		transform: scale(2.5);
-		opacity: 0;
-	}
-}
-.logo-anim {
+/* Main content */
+.main-content {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	margin-top: 10px;
-	transition: opacity 0.8s cubic-bezier(.4,2,.6,1);
+	min-height: 100vh;
+	padding: 0 0.5em 0 0.5em;
+	box-sizing: border-box;
+	animation: fadein 1.2s;
+}
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+.header {
+	margin-top: 32px;
+	margin-bottom: 18px;
+	text-align: center;
+}
+.header h1 {
+	font-size: 2.1rem;
+	font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	color: #fff;
+}
+.header .accent {
+	color: #25f4ee;
+	font-weight: 400;
+}
+.about-section {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	background: rgba(35,38,44,0.85);
+	border-radius: 22px;
+	box-shadow: 0 2px 16px #25f4ee22;
+	padding: 32px 28px;
+	margin-bottom: 36px;
+	max-width: 700px;
+}
+.about-avatar {
+	width: 140px;
+	height: 140px;
+	min-width: 140px;
+	min-height: 140px;
+	max-width: 140px;
+	max-height: 140px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	overflow: hidden;
+	background: #23272f;
+	box-shadow: 0 2px 16px #25f4ee33;
+	border: 3px solid #fe2c55;
+}
+.about-avatar img {
+	width: 140px;
+	height: 140px;
+	min-width: 140px;
+	min-height: 140px;
+	max-width: 140px;
+	max-height: 140px;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+}
+.about-info h2 {
+	margin-top: 0;
+	color: #25f4ee;
+	font-size: 1.3rem;
+}
+.about-info p {
+	margin-bottom: 0;
+	color: #e0e0e0;
+	font-size: 1.08rem;
 }
 
+/* Facts grid */
+.facts-section {
+	margin-top: 18px;
+	margin-bottom: 32px;
+	width: 100%;
+	max-width: 900px;
+}
+.facts-section h2 {
+	text-align: center;
+	color: #fe2c55;
+	font-size: 1.5rem;
+	margin-bottom: 1.2em;
+}
+.facts-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: center;
+}
+.fact-card {
+	background: #23272f;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(35,166,213,0.10);
+	padding: 1.5em 1.2em 1.2em 1.2em;
+	min-width: 220px;
+	max-width: 270px;
+	flex: 1 1 220px;
+	text-align: center;
+	transition: transform 0.18s, box-shadow 0.18s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.fact-card:hover {
+	transform: translateY(-6px) scale(1.03);
+	box-shadow: 0 8px 32px rgba(35,244,238,0.13);
+}
+.fact-icon {
+	font-size: 2.2rem;
+	margin-bottom: 0.5em;
+}
+.fact-title {
+	font-size: 1.13rem;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+.fact-desc {
+	font-size: 1.01rem;
+	color: #e0e0e0;
+}
 
-.tiktok-logo {
-	width: 56px;
-	height: 56px;
-	filter:
-		drop-shadow(0 0 16px #25f4eecc)
-		drop-shadow(0 0 32px #fe2c55cc)
-		drop-shadow(0 0 8px #fff8);
-	transition: transform 0.25s cubic-bezier(.4,2,.6,1), filter 0.25s;
-	animation: tiktok-glow 2.2s infinite alternate;
+.footer {
+	margin-top: 32px;
+	color: #fff8;
+	text-align: center;
+	padding: 1.2em 0 1em 0;
+	font-size: 1rem;
+	letter-spacing: 0.04em;
 }
-/* Управление появлением всех главных элементов только через center-appear */
-.center-appear {
-	opacity: 0;
-	transform: translateY(40px) scale(0.95);
-	transition: opacity 0.7s cubic-bezier(.7,0,.3,1), transform 0.7s cubic-bezier(.7,0,.3,1);
-}
-.center-appear.visible {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-.tiktok-link:hover .tiktok-logo {
-	transform: scale(1.13) rotate(-7deg);
-	filter:
-		drop-shadow(0 0 32px #25f4ee)
-		drop-shadow(0 0 48px #fe2c55)
-		drop-shadow(0 0 16px #fff);
-}
-@keyframes tiktok-fade-in {
-	from { opacity: 0; transform: scale(0.7) rotate(-10deg); }
-	to { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-@keyframes tiktok-glow {
-	from {
-		filter:
-			drop-shadow(0 0 8px #25f4eecc)
-			drop-shadow(0 0 16px #fe2c55cc)
-			drop-shadow(0 0 4px #fff8);
+
+@media (max-width: 700px) {
+	.about-section {
+		flex-direction: column;
+		gap: 1.2em;
+		padding: 18px 8px;
+		max-width: 98vw;
 	}
-	to {
-		filter:
-			drop-shadow(0 0 32px #25f4ee)
-			drop-shadow(0 0 48px #fe2c55)
-			drop-shadow(0 0 16px #fff);
+	.facts-grid {
+		gap: 12px;
+	}
+	.fact-card {
+		min-width: 0;
+		max-width: 98vw;
+		font-size: 0.98rem;
+	}
+	.header {
+		margin-top: 18px;
+		margin-bottom: 10px;
 	}
 }

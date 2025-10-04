@@ -1,44 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elora — Fun page</title>
+	<title>Elora — TikTok Streamer & Cosplayer</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="page-transition-overlay" id="page-transition"></div>
-	<canvas id="bg-particles"></canvas>
-	<main class="main-container">
-		<div class="title-anim">
-			<div class="typewriter-title center-appear" id="typewriter"></div>
-		</div>
-		<div class="about-logo-block">
-			<a href="index2.html" class="about-link animated-btn center-appear" id="about-link">Facts about Elora</a>
-			<div class="logo-anim center-appear" id="logo-container"></div>
-		</div>
+	<div class="intro" id="intro">
+		<span class="intro-title">Elora</span>
+	</div>
+	<main class="main-content" id="main-content" style="display:none;">
+		<header class="header">
+			<h1>Elora <span class="accent">- Beginner TikTok Creator</span></h1>
+		</header>
+		<section class="about-section">
+			<div class="about-avatar">
+				<img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/3971bd91835dd055d073823ee4a5f591~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=7b3639f5&x-expires=1759737600&x-signature=Qj2ceot4ppyNiDzG9jdPhkrBkCc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a" alt="Elora TikTok avatar">
+			</div>
+			<div class="about-info">
+				<h2>About Elora</h2>
+				<p>Elora is a beginner TikTok creator and cosplayer with 5,000 followers. She is just starting her journey, sharing creative videos, cosplay, and her love for anime and manga. Her bright pink hair and positive energy make her stand out!</p>
+			</div>
+		</section>
+		<section class="facts-section">
+			<h2>Fun Facts</h2>
+			<div class="facts-grid">
+				<div class="fact-card">
+					<span class="fact-icon">💬</span>
+					<div class="fact-title">Never reveals her height</div>
+					<div class="fact-desc">A little mystery is always fun!</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">💖</span>
+					<div class="fact-title">Loves pink hair</div>
+					<div class="fact-desc">Her hair color is her signature!</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">🎥</span>
+					<div class="fact-title">TikTok creator & streamer</div>
+					<div class="fact-desc">Makes fun videos and streams for her fans.</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">📚</span>
+					<div class="fact-title">Enjoys manga</div>
+					<div class="fact-desc">Her favorite anime is Chainsaw Man!</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">🎭</span>
+					<div class="fact-title">Cosplays Reze</div>
+					<div class="fact-desc">Plans to cosplay Reze from Chainsaw Man.</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">👓</span>
+					<div class="fact-title">Wears glasses for style</div>
+					<div class="fact-desc">Glasses are part of her look!</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">🌸</span>
+					<div class="fact-title">Loves Chinese style</div>
+					<div class="fact-desc">Elora is inspired by Chinese aesthetics and culture.</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">🇨🇳</span>
+					<div class="fact-title">From China, lives in Tokyo</div>
+					<div class="fact-desc">Elora is originally from China but now lives in Tokyo.</div>
+				</div>
+				<div class="fact-card">
+					<span class="fact-icon">🈚</span>
+					<div class="fact-title">Speaks little Japanese</div>
+					<div class="fact-desc">Her Japanese is not very good yet!</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<span>© 2025 Elora Fanpage. All rights reserved.</span>
+		</footer>
 	</main>
-	<script src="script.js"></script>
-</body>
-<script>
-// Fade transition between pages (простое появление/исчезновение)
-const aboutLink = document.getElementById('about-link');
-const overlay = document.getElementById('page-transition');
-if (aboutLink && overlay) {
-	aboutLink.addEventListener('click', function(e) {
-		e.preventDefault();
-		overlay.classList.add('active');
+	<script>
+	// Intro animation: show Elora, then fade out and show main content
+	window.addEventListener('DOMContentLoaded', () => {
+		const intro = document.getElementById('intro');
+		const main = document.getElementById('main-content');
 		setTimeout(() => {
-			window.location.href = aboutLink.href;
-		}, 400);
+			intro.classList.add('hide');
+			setTimeout(() => {
+				intro.style.display = 'none';
+				main.style.display = '';
+			}, 900);
+		}, 1600);
 	});
-	// Сброс overlay после загрузки
-	window.addEventListener('pageshow', () => {
-		overlay.classList.remove('active');
-		overlay.style.opacity = '';
-	});
-}
-</script>
+	</script>
 </body>
 </html>
+
+
