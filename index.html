@@ -3,95 +3,244 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elora — TikTok Streamer & Cosplayer</title>
+	<title>Elora — TikTok & Cosplay</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="intro" id="intro">
-		<span class="intro-title">Elora</span>
+	<div class="tiktok-bg">
+		<div class="tiktok-circle tiktok-c1"></div>
+		<div class="tiktok-circle tiktok-c2"></div>
+		<div class="tiktok-circle tiktok-c3"></div>
 	</div>
-	<main class="main-content" id="main-content" style="display:none;">
+	<div id="intro-overlay">
+		<div class="intro-content">
+			<span id="intro-typed"></span>
+		</div>
+	</div>
+	<div id="main-content">
 		<header class="header">
-			<h1>Elora <span class="accent">- Beginner TikTok Creator</span></h1>
+			<a href="https://www.tiktok.com/@elora0327" class="tiktok-logo-static" target="_blank" aria-label="TikTok">
+				<svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g>
+						<path d="M33.5 7c.3 2.7 2.3 6.1 6.1 6.4v5.1c-2.1.2-4.2-.1-6.1-.9v13.2c0 7.1-5.8 12.8-13 12.8S7.5 37.9 7.5 30.8c0-7.1 5.8-12.8 13-12.8.5 0 1 .1 1.5.1v5.2c-.5-.1-1-.2-1.5-.2-4.2 0-7.5 3.3-7.5 7.7s3.3 7.7 7.5 7.7 7.5-3.3 7.5-7.7V7h5z" fill="#25F4EE"/>
+						<path d="M33.5 7c.3 2.7 2.3 6.1 6.1 6.4v5.1c-2.1.2-4.2-.1-6.1-.9v13.2c0 7.1-5.8 12.8-13 12.8S7.5 37.9 7.5 30.8c0-7.1 5.8-12.8 13-12.8.5 0 1 .1 1.5.1v5.2c-.5-.1-1-.2-1.5-.2-4.2 0-7.5 3.3-7.5 7.7s3.3 7.7 7.5 7.7 7.5-3.3 7.5-7.7V7h5z" fill="#FE2C55" fill-opacity=".5"/>
+						<path d="M33.5 7c.3 2.7 2.3 6.1 6.1 6.4v5.1c-2.1.2-4.2-.1-6.1-.9v13.2c0 7.1-5.8 12.8-13 12.8S7.5 37.9 7.5 30.8c0-7.1 5.8-12.8 13-12.8.5 0 1 .1 1.5.1v5.2c-.5-.1-1-.2-1.5-.2-4.2 0-7.5 3.3-7.5 7.7s3.3 7.7 7.5 7.7 7.5-3.3 7.5-7.7V7h5z" fill="#fff" fill-opacity=".2"/>
+					</g>
+				</svg>
+			</a>
+			<span class="elora-title">Elora</span>
 		</header>
-		<section class="about-section">
-			<div class="about-avatar">
-				<img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/3971bd91835dd055d073823ee4a5f591~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=7b3639f5&x-expires=1759737600&x-signature=Qj2ceot4ppyNiDzG9jdPhkrBkCc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a" alt="Elora TikTok avatar">
+		<main>
+			<section class="cosplay-gallery-section">
+				<h3 class="gallery-title">Elora Cosplay</h3>
+				<div class="cosplay-gallery">
+					<img src="coplay1.png" alt="Cosplay 1" class="gallery-img">
+					<img src="cosplay2.png" alt="Cosplay 2" class="gallery-img">
+					<img src="cosplay3.png" alt="Cosplay 3" class="gallery-img">
+					<img src="cosplay4.png" alt="Cosplay 4" class="gallery-img">
+				</div>
+			</section>
+			<div id="gallery-modal" class="gallery-modal">
+				<span class="gallery-modal-close">×</span>
+				<img id="gallery-modal-img" src="" alt="Cosplay large" class="gallery-modal-img">
 			</div>
-			<div class="about-info">
-				<h2>About Elora</h2>
-				<p>Elora is a beginner TikTok creator and cosplayer with 5,000 followers. She is just starting her journey, sharing creative videos, cosplay, and her love for anime and manga. Her bright pink hair and positive energy make her stand out!</p>
-			</div>
-		</section>
-		<section class="facts-section">
-			<h2>Fun Facts</h2>
-			<div class="facts-grid">
-				<div class="fact-card">
-					<span class="fact-icon">💬</span>
-					<div class="fact-title">Never reveals her height</div>
-					<div class="fact-desc">A little mystery is always fun!</div>
+			<section class="about-section">
+				<div class="about-avatar">
+					<img src="image1.jpeg" alt="Elora TikTok avatar" onerror="this.style.display='none'">
 				</div>
-				<div class="fact-card">
-					<span class="fact-icon">💖</span>
-					<div class="fact-title">Loves pink hair</div>
-					<div class="fact-desc">Her hair color is her signature!</div>
+				<div class="about-info">
+					<h2>Elora — TikTok & Cosplay</h2>
+					<p>Elora is an aspiring TikToker and cosplayer. <span id="sub-counter" class="sub-counter">0</span> followers, vibrant looks, loves anime and manga, lives in Tokyo.</p>
+					<button id="random-fact-btn" class="random-fact-btn">Random Fact</button>
+					<div id="random-fact" class="random-fact"></div>
 				</div>
-				<div class="fact-card">
-					<span class="fact-icon">🎥</span>
-					<div class="fact-title">TikTok creator & streamer</div>
-					<div class="fact-desc">Makes fun videos and streams for her fans.</div>
+			</section>
+			<section class="buttons-section">
+				<button class="modal-btn" data-modal="facts">Facts</button>
+				<button class="modal-btn" data-modal="cosplay">Cosplay</button>
+				<button class="modal-btn" data-modal="tiktok">TikTok</button>
+			</section>
+
+			<!-- Fan Reviews Section -->
+			<section class="reviews-section">
+				<h3 class="reviews-title">Fan Reviews</h3>
+				<div class="reviews-grid">
+					<div class="review-card">
+						<div class="review-avatar" style="background-image:url('coplay1.png')"></div>
+						<div class="review-content">
+							<div class="review-author">He us</div>
+							<div class="review-text">You're cute 😊</div>
+						</div>
+					</div>
 				</div>
-				<div class="fact-card">
-					<span class="fact-icon">📚</span>
-					<div class="fact-title">Enjoys manga</div>
-					<div class="fact-desc">Her favorite anime is Chainsaw Man!</div>
-				</div>
-				<div class="fact-card">
-					<span class="fact-icon">🎭</span>
-					<div class="fact-title">Cosplays Reze</div>
-					<div class="fact-desc">Plans to cosplay Reze from Chainsaw Man.</div>
-				</div>
-				<div class="fact-card">
-					<span class="fact-icon">👓</span>
-					<div class="fact-title">Wears glasses for style</div>
-					<div class="fact-desc">Glasses are part of her look!</div>
-				</div>
-				<div class="fact-card">
-					<span class="fact-icon">🌸</span>
-					<div class="fact-title">Loves Chinese style</div>
-					<div class="fact-desc">Elora is inspired by Chinese aesthetics and culture.</div>
-				</div>
-				<div class="fact-card">
-					<span class="fact-icon">🇨🇳</span>
-					<div class="fact-title">From China, lives in Tokyo</div>
-					<div class="fact-desc">Elora is originally from China but now lives in Tokyo.</div>
-				</div>
-				<div class="fact-card">
-					<span class="fact-icon">🈚</span>
-					<div class="fact-title">Speaks little Japanese</div>
-					<div class="fact-desc">Her Japanese is not very good yet!</div>
+			</section>
+			<!-- Modals -->
+			<div class="modal" id="modal-facts">
+				<div class="modal-content">
+					<button class="modal-close">×</button>
+					<h3>Facts about Elora</h3>
+					<div class="facts-grid">
+						<div class="fact-card"><span class="fact-icon">❓</span><div class="fact-title">Height is a secret!</div><div class="fact-desc">She never reveals her height.</div></div>
+						<div class="fact-card"><span class="fact-icon">🎂</span><div class="fact-title">20 years old</div><div class="fact-desc">Elora is 20 years old.</div></div>
+						<div class="fact-card"><span class="fact-icon">🇨🇳</span><div class="fact-title">From China, lives in Tokyo</div><div class="fact-desc">Elora is from China but lives in Tokyo.</div></div>
+						<div class="fact-card"><span class="fact-icon">🈚</span><div class="fact-title">Japanese is difficult</div><div class="fact-desc">She doesn't speak Japanese well.</div></div>
+						<div class="fact-card"><span class="fact-icon">📚</span><div class="fact-title">Manga lover</div><div class="fact-desc">Elora loves reading manga.</div></div>
+						<div class="fact-card"><span class="fact-icon">🪚</span><div class="fact-title">Favorite anime</div><div class="fact-desc">Her favorite anime is Chainsaw Man.</div></div>
+						<div class="fact-card"><span class="fact-icon">🌸</span><div class="fact-title">Chinese style</div><div class="fact-desc">She loves traditional Chinese style.</div></div>
+						<div class="fact-card"><span class="fact-icon">👓</span><div class="fact-title">Glasses for style</div><div class="fact-desc">Elora wears glasses for style, not for vision.</div></div>
+						<div class="fact-card"><span class="fact-icon">🎭</span><div class="fact-title">Cosplay</div><div class="fact-desc">She sometimes cosplays characters.</div></div>
+						<div class="fact-card"><span class="fact-icon">⚡</span><div class="fact-title">Plans to cosplay Reze</div><div class="fact-desc">Elora plans to cosplay Reze from Chainsaw Man.</div></div>
+					</div>
 				</div>
 			</div>
-		</section>
+			<div class="modal" id="modal-cosplay">
+				<div class="modal-content">
+					<button class="modal-close">×</button>
+					<h3>Cosplay</h3>
+					<div class="facts-grid">
+						<div class="fact-card"><span class="fact-icon">🎭</span><div class="fact-title">Cosplay</div><div class="fact-desc">She sometimes cosplays characters.</div></div>
+						<div class="fact-card"><span class="fact-icon">⚡</span><div class="fact-title">Plans to cosplay Reze</div><div class="fact-desc">Elora plans to cosplay Reze from Chainsaw Man.</div></div>
+						<div class="fact-card"><span class="fact-icon">👓</span><div class="fact-title">Glasses for style</div><div class="fact-desc">Elora wears glasses for style, not for vision.</div></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" id="modal-tiktok">
+				<div class="modal-content">
+					<button class="modal-close">×</button>
+					<h3>TikTok Elora</h3>
+					<div class="facts-grid">
+						<div class="fact-card"><span class="fact-icon">🇨🇳</span><div class="fact-title">From China, lives in Tokyo</div><div class="fact-desc">Elora is from China but lives in Tokyo.</div></div>
+						<div class="fact-card"><span class="fact-icon">🈚</span><div class="fact-title">Japanese is difficult</div><div class="fact-desc">She doesn't speak Japanese well.</div></div>
+					</div>
+					<a href="https://www.tiktok.com/@elora0327" target="_blank" class="tiktok-link-btn">Go to TikTok</a>
+				</div>
+			</div>
+		</main>
 		<footer class="footer">
 			<span>© 2025 Elora Fanpage. All rights reserved.</span>
 		</footer>
-	</main>
+	</div>
 	<script>
-	// Intro animation: show Elora, then fade out and show main content
-	window.addEventListener('DOMContentLoaded', () => {
-		const intro = document.getElementById('intro');
-		const main = document.getElementById('main-content');
+// Random Fact button logic
+const facts = [
+	"Her height is a secret!",
+	"Elora is 20 years old.",
+	"Elora is from China but lives in Tokyo.",
+	"She doesn't speak Japanese well.",
+	"Elora loves reading manga.",
+	"Her favorite anime is Chainsaw Man.",
+	"She loves traditional Chinese style.",
+	"Elora wears glasses for style, not for vision.",
+	"She sometimes cosplays characters.",
+	"Elora plans to cosplay Reze from Chainsaw Man."
+];
+const randomFactBtn = document.getElementById('random-fact-btn');
+const randomFactDiv = document.getElementById('random-fact');
+if (randomFactBtn) {
+	randomFactBtn.addEventListener('click', () => {
+		const idx = Math.floor(Math.random() * facts.length);
+		randomFactDiv.textContent = facts[idx];
+		randomFactDiv.classList.remove('show');
+		// Триггерим анимацию
 		setTimeout(() => {
-			intro.classList.add('hide');
-			setTimeout(() => {
-				intro.style.display = 'none';
-				main.style.display = '';
-			}, 900);
-		}, 1600);
+			randomFactDiv.classList.add('show');
+		}, 10);
 	});
+}
+// Анимация появления отзывов
+document.addEventListener('DOMContentLoaded', () => {
+	const cards = document.querySelectorAll('.review-card');
+	cards.forEach((card, i) => {
+		setTimeout(() => {
+			card.classList.add('show');
+		}, 200 + i * 220);
+	});
+});
+document.querySelectorAll('.gallery-img').forEach(img => {
+	img.addEventListener('click', () => {
+		const modal = document.getElementById('gallery-modal');
+		const modalImg = document.getElementById('gallery-modal-img');
+		modalImg.src = img.src;
+		modal.classList.add('open');
+	});
+});
+document.querySelector('.gallery-modal-close').addEventListener('click', () => {
+	document.getElementById('gallery-modal').classList.remove('open');
+});
+document.getElementById('gallery-modal').addEventListener('click', e => {
+	if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+});
+						// Интро с плавной анимацией печати и чёрным текстом (фикс багов, затемнение)
+						const introText = 'Elora - Fan Page';
+						const introTyped = document.getElementById('intro-typed');
+						let i = 0;
+						function typeIntro() {
+							if (i <= introText.length) {
+								let html = '';
+								for (let j = 0; j < i; j++) {
+									html += `<span class=\"typed-char\">${introText[j]}</span>`;
+								}
+								html += '<span class=\"typed-cursor\"></span>';
+								introTyped.innerHTML = html;
+								if (i < introText.length) {
+									const chars = introTyped.querySelectorAll('.typed-char');
+									if (chars[i-1]) {
+										chars[i-1].style.opacity = '0';
+										chars[i-1].style.animation = 'fadein-char 0.38s forwards';
+									}
+								}
+								i++;
+								setTimeout(typeIntro, 170);
+							} else {
+								setTimeout(() => {
+									document.getElementById('intro-overlay').classList.add('hide');
+									// Плавное появление основного контента
+									const mainContent = document.getElementById('main-content');
+									mainContent.classList.add('fade-in');
+									// Анимированный счетчик подписчиков
+									const subCounter = document.getElementById('sub-counter');
+									if (subCounter) animateCounter(subCounter, 0, 5000, 3000);
+								}, 900);
+							}
+						}
+						function animateCounter(el, from, to, duration) {
+							let start = null;
+							function step(ts) {
+								if (!start) start = ts;
+								let progress = Math.min((ts - start) / duration, 1);
+								let value = Math.floor(from + (to - from) * progress);
+								el.textContent = value.toLocaleString('ru-RU');
+								if (progress < 1) {
+									requestAnimationFrame(step);
+								} else {
+									el.textContent = to.toLocaleString('ru-RU');
+								}
+							}
+							requestAnimationFrame(step);
+						}
+						window.addEventListener('DOMContentLoaded', () => {
+							// Скрываем основной контент до завершения интро
+							const mainContent = document.getElementById('main-content');
+							mainContent.classList.remove('fade-in');
+							setTimeout(typeIntro, 400);
+						});
+		// Модалки
+		document.querySelectorAll('.modal-btn').forEach(btn => {
+			btn.addEventListener('click', e => {
+				const modal = document.getElementById('modal-' + btn.dataset.modal);
+				if (modal) modal.classList.add('open');
+			});
+		});
+		document.querySelectorAll('.modal-close').forEach(btn => {
+			btn.addEventListener('click', e => {
+				btn.closest('.modal').classList.remove('open');
+			});
+		});
+		window.addEventListener('click', e => {
+			if (e.target.classList.contains('modal')) {
+				e.target.classList.remove('open');
+			}
+		});
 	</script>
 </body>
 </html>
-
-
